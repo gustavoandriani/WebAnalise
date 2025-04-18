@@ -33,7 +33,6 @@ export default function Calc() {
         <>
             <form onSubmit={submitForm}>
                 <input type="number" placeholder="Digite a quantidade de elementos" onChange={(ev) => setElementos(ev.target.value)}/>
-                <br />
                 <input type="number" placeholder="Digite a quantidade de posições" onChange={(ev) => setPosicoes(ev.target.value)} />
             </form>
 
