@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function Calc() {
+export default function CalcArranjoSimples() {
     const[elementos, setElementos] = useState(0)
     const[posicoes, setPosicoes] = useState(0)
 
@@ -21,17 +21,13 @@ export default function Calc() {
         return Math.round(resultado)
     }
 
-    const arranjoRepeticao = (elementos, posicoes) => {
-        return Math.pow(elementos, posicoes)
-    }
-
     const combinacao = (elementos, posicoes) => {
         let resultado = fatorial(elementos) / (fatorial(posicoes) * fatorial(elementos - posicoes))
         return Math.round(resultado)
     }
     return (
         <>
-            <form onSubmit={submitForm}>
+            <form>
                 <input type="number" placeholder="Quantidade de elementos" onChange={(ev) => setElementos(ev.target.value)}/>
                 <br />
                 <input type="number" placeholder="Quantidade de posições" onChange={(ev) => setPosicoes(ev.target.value)} />
