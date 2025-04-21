@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function CalcArranjoSimples() {
+export default function CalcArranjo() {
     const[elementos, setElementos] = useState(0)
     const[posicoes, setPosicoes] = useState(0)
 
@@ -21,10 +21,10 @@ export default function CalcArranjoSimples() {
         return Math.round(resultado)
     }
 
-    const combinacao = (elementos, posicoes) => {
-        let resultado = fatorial(elementos) / (fatorial(posicoes) * fatorial(elementos - posicoes))
-        return Math.round(resultado)
+    const arranjoRepeticao = (elementos, posicoes) => {
+        return Math.pow(elementos, posicoes)
     }
+
     return (
         <>
             <form>
@@ -34,10 +34,9 @@ export default function CalcArranjoSimples() {
             </form>
 
             <div>
-                <h1>O fatorial de {elementos} é {fatorial(elementos)}</h1>
-                <h1>O arranjo simples de {elementos} elementos para {posicoes} posições, é {arranjoSimples(elementos, posicoes)}</h1>
-                <h1>O arranjo c/ repetição de {elementos} elementos para {posicoes} posições, é {arranjoRepeticao(elementos, posicoes)}</h1>
-                <h1>A combinação de {elementos} elementos para {posicoes} posições, é {combinacao(elementos, posicoes)}</h1>
+                <p>O fatorial de {elementos} é {fatorial(elementos)}</p>
+                <p>O arranjo simples de {elementos} elementos para {posicoes} posições, é {arranjoSimples(elementos, posicoes)}</p>
+                <p>O arranjo c/ repetição de {elementos} elementos para {posicoes} posições, é {arranjoRepeticao(elementos, posicoes)}</p>
             </div>
         </>
     )
