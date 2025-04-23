@@ -21,7 +21,7 @@ function App() {
             <Tab label="Arranjo" value="1" />
             <Tab label="Combinação" value="2" />
             <Tab label="Anagrama" value="3" />
-            <Tab label="PrincipioMultiplicativo" value="4" />
+            <Tab label="Principio Multiplicativo" value="4" />
           </TabList>
         </Box>
         <TabPanel value="1">
