@@ -6,6 +6,7 @@ import CalcArranjo from './components/CalcArranjo';
 import CalcCombinacao from './components/CalcCombinacao';
 import CalcAnagramas from './components/CalcAnagramas';
 import PrincipioMultiplicativo from './components/PrincipioMultiplicativo';
+import PermutationCalculator from './components/PermutationCalculator';
 
 function App() {
   const [ value, setValue ] = useState('1');
@@ -35,6 +36,7 @@ function App() {
         </TabPanel>
         <TabPanel value="4">
           <PrincipioMultiplicativo/>
+          <PermutationCalculator/>
         </TabPanel>
       </TabContext>
     </Box>
