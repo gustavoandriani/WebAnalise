@@ -1,56 +1,76 @@
-import { useState } from "react"
+import React, { useState } from "react";
 
-const fatorial = (num) => {
-    let fat = 1;
-    for (let i = num; i > 1; i--) {
-        fat *= i;
-    }
-    return fat
-}
+const fatorial = (n) => {
+  if (n <= 1) return 1;
+  let resultado = 1;
+  for (let i = 2; i <= n; i++) resultado *= i;
+  return resultado;
+};
 
-const calcularAnagramas = (p) => {
-    const letras = p.toLowerCase().split("");
-    const tamanhoPalavra = letras.length;
-  
-    // Contar as repetições de cada letra
-    const frequencia = {};
-    letras.forEach((letra) => {
-      frequencia[letra] = (frequencia[letra] || 0) + 1;
+// Conta ocorrências de cada letra
+const contarLetras = (str) => {
+  const map = {};
+  for (let char of str) {
+    map[char] = (map[char] || 0) + 1;
+  }
+  return map;
+};
+
+// Permutações únicas (sem repetição de letras iguais)
+const calcularAnagramasUnicos = (str) => {
+  const contagem = contarLetras(str);
+  const numerador = fatorial(str.length);
+  const denominador = Object.values(contagem).reduce(
+    (acc, val) => acc * fatorial(val),
+    1
+  );
+  return numerador / denominador;
+};
+
+export default function AnagramCalculator() {
+  const [palavra, setPalavra] = useState("");
+  const [resultado, setResultado] = useState(null);
+
+  const handleCalculate = () => {
+    const limpaPalavra = palavra.trim().toLowerCase().replace(/\s+/g, "");
+    if (!limpaPalavra) return;
+
+    const totalSemRepeticao = calcularAnagramasUnicos(limpaPalavra);
+    const totalComRepeticao = Math.pow(limpaPalavra.length, limpaPalavra.length);
+
+    setResultado({
+      totalComRepeticao,
+      totalSemRepeticao,
     });
-  
-    // Numerador: totalLetters!
-    const numerador = fatorial(tamanhoPalavra);
-  
-    // Denominador: produto dos fatoriais das frequências
-    const denominador = Object.values(frequencia).reduce(
-      (acc, count) => acc * fatorial(count),
-      1
-    );
-  
-    return numerador / denominador;
-}
+  };
 
-export default function CalcAnagramas() {
-    const [palavra, setPalavra] = useState("")
-    const [resultado, setResultado] = useState(null)
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Digite uma palavra"
+        value={palavra}
+        onChange={(e) => setPalavra(e.target.value)}
+      />
 
-    const handleChange = (e) => {
-        const value = e.target.value;
-        setPalavra(value);
-        if (value) {
-          const anagrams = calcularAnagramas(value);
-          setResultado(anagrams);
-        } else {
-          setResultado(null);
-        }
-      };
-    return (
-        <>
-            <form>
-                <input type="text" placeholder="Insira a palavra" value={palavra} onChange={handleChange}/>
-            </form>
+      <button
+        onClick={handleCalculate}
+      >
+        Calcular
+      </button>
 
-            <p>Ela tem {resultado.toLocaleString()} letras duplicadas.</p>
-        </>
-    )
-}
+      {resultado && (
+        <div>
+          <p>
+            <strong>Combinatória com repetição (teórica):</strong>{" "}
+            {resultado.totalComRepeticao.toLocaleString()}
+          </p>
+          <p>
+            <strong>Anagramas únicos (sem repetição de letras iguais):</strong>{" "}
+            {resultado.totalSemRepeticao.toLocaleString()}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};

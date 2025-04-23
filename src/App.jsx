@@ -16,7 +16,7 @@ function App() {
     <Box sx={{ width: '100%', height: '100dvh', typography: 'body1', display: 'flex', flexDirection: 'column'}}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example" sx={{ color: 'white' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Arranjo" value="1" />
             <Tab label="Combinação" value="2" />
             <Tab label="Anagrama" value="3" />
