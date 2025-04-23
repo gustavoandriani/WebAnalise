@@ -5,6 +5,7 @@ import { TabList, TabPanel, TabContext } from '@mui/lab';
 import CalcArranjo from './components/CalcArranjo';
 import CalcCombinacao from './components/CalcCombinacao';
 import CalcAnagramas from './components/CalcAnagramas';
+import PrincipioMultiplicativo from './components/PrincipioMultiplicativo';
 
 function App() {
   const [ value, setValue ] = useState('1');
@@ -20,6 +21,7 @@ function App() {
             <Tab label="Arranjo" value="1" />
             <Tab label="Combinação" value="2" />
             <Tab label="Anagrama" value="3" />
+            <Tab label="PrincipioMultiplicativo" value="4" />
           </TabList>
         </Box>
         <TabPanel value="1">
@@ -30,6 +32,9 @@ function App() {
         </TabPanel>
         <TabPanel value="3">
           <CalcAnagramas/>
+        </TabPanel>
+        <TabPanel value="4">
+          <PrincipioMultiplicativo/>
         </TabPanel>
       </TabContext>
     </Box>
