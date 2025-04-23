@@ -26,7 +26,10 @@ export default function CalcCombinacao() {
 
             <div>
                 <p>O fatorial de {elementos} é {fatorial(elementos)}</p>
-                <p>A combinação de {elementos} elementos para {posicoes} posições, é {combinacao(elementos, posicoes)}</p>
+                {
+                    posicoes > elementos ? <p>Se você tivesse prestado atenção na aula do Bifi, saberia que n(elementos) não pode ser menor que p(posições). 😎</p> :
+                    <p>A combinação de {elementos} elementos para {posicoes} posições, é {combinacao(elementos, posicoes)}</p>
+                }
             </div>
         </>
     )
