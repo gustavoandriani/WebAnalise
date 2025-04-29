@@ -27,7 +27,7 @@ const calcularAnagramasUnicos = (str) => {
   return numerador / denominador;
 };
 
-export default function AnagramCalculator() {
+export default function CalcAnagramas() {
   const [palavra, setPalavra] = useState("");
   const [resultado, setResultado] = useState(null);
 
@@ -45,7 +45,7 @@ export default function AnagramCalculator() {
   };
 
   return (
-    <div>
+    <div style={{ position: "relative", top: "64px" }}>
       <input
         type="text"
         placeholder="Digite uma palavra"

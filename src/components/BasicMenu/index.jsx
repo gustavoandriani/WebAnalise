@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Typography } from '@mui/material';
+import { Link } from "react-router-dom";
 
 export default function BasicMenu({title1, title2, title3, title4, title5}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -46,12 +47,12 @@ export default function BasicMenu({title1, title2, title3, title4, title5}) {
       >
         <MenuItem onClick={handleClose}>
             <Typography variant="inherit" noWrap>
-                {title1}
+                <Link style={{ margin: "0 1rem" }} to="/">Permutação</Link>
             </Typography>
         </MenuItem>
         <MenuItem onClick={handleClose}>
             <Typography variant="inherit" noWrap>
-                {title2}
+              <Link style={{ margin: "0 1rem" }} to="anagramas/">Anagramas</Link>
             </Typography>
         </MenuItem>
         <MenuItem onClick={handleClose}>

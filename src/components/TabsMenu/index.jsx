@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';
-import CalcCombinacao from '../CalcCombinacao';
-import CalcAnagramas from '../CalcAnagramas';
-import PrincipioMultiplicativo from '../PrincipioMultiplicativo';
-import PermutationCalculator from '../PermutationCalculator';
-import CalcArranjo from '../CalcArranjo';
+import CalcCombinacao from '../../pages/CalcCombinacao';
+import CalcAnagramas from '../../pages/CalcAnagramas';
+import PrincipioMultiplicativo from '../../pages/PrincipioMultiplicativo';
+import PermutationCalculator from '../../pages/PermutationCalculator';
+import CalcArranjo from '../../pages/CalcArranjo';
 
 export default function TabsMenu() {
     const [ value, setValue ] = useState('1');
