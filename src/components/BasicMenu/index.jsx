@@ -57,17 +57,17 @@ export default function BasicMenu({title1, title2, title3, title4, title5}) {
         </MenuItem>
         <MenuItem onClick={handleClose}>
             <Typography variant="inherit" noWrap>
-                {title3}
+              <Link style={{ margin: "0 1rem" }} to="arranjo/">Arranjo</Link>
             </Typography>
         </MenuItem>
         <MenuItem onClick={handleClose}>
             <Typography variant="inherit" noWrap>
-                {title4}
+              <Link style={{ margin: "0 1rem" }} to="combinacao/">Combinação</Link>
             </Typography>
         </MenuItem>
         <MenuItem onClick={handleClose}>
             <Typography variant="inherit" noWrap>
-                {title5}
+              <Link style={{ margin: "0 1rem" }} to="principiomultiplicativo/">Princípio Multiplicativo</Link>
             </Typography>
         </MenuItem>
       </Menu>
