@@ -29,12 +29,11 @@ const PrincipioMultiplicativo = () => {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto">
+    <div style={{ position: "relative", top: "64px" }}>
       {steps.map((value, index) => (
-        <div key={index} className="flex items-center mb-2">
+        <div key={index}>
           <input
             type="number"
-            className="border px-2 py-1 mr-2 w-full"
             value={value}
             min="0"
             onChange={(e) => updateStep(index, e.target.value)}
@@ -42,7 +41,6 @@ const PrincipioMultiplicativo = () => {
           {steps.length > 1 && (
             <button
               onClick={() => removeStep(index)}
-              className="bg-red-500 text-white px-2 py-1 rounded"
             >
               Remover
             </button>
@@ -51,11 +49,10 @@ const PrincipioMultiplicativo = () => {
       ))}
       <button
         onClick={addStep}
-        className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
       >
         Adicionar Etapa
       </button>
-      <div className="mt-4 text-lg">
+      <div>
         Total de combinações: <strong>{result}</strong>
       </div>
     </div>

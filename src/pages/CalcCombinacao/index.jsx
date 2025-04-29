@@ -17,7 +17,7 @@ export default function CalcCombinacao() {
     }
     
     return (
-        <>
+        <div style={{ position: "relative", top: "64px" }}>
             <form>
                 <input type="number" placeholder="Quantidade de elementos" onChange={(ev) => setElementos(ev.target.value)}/>
                 <br />
@@ -31,6 +31,6 @@ export default function CalcCombinacao() {
                     <p>A combinação de {elementos} elementos para {posicoes} posições, é {combinacao(elementos, posicoes)}</p>
                 }
             </div>
-        </>
+        </div>
     )
 }
