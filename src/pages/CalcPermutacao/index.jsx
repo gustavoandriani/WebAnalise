@@ -15,7 +15,7 @@ export default function CalcPermutacao() {
       const value = fatorial(n) / fatorial(n - r);
       setResult(value);
     } else {
-      setResult("'n' deve ser maior ou igual a 'r'");
+      setResult("N(total de elementos) não pode ser menor que R(elementos escolhidos).");
     }
   };
 

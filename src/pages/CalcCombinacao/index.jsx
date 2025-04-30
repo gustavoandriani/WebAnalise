@@ -25,9 +25,8 @@ export default function CalcCombinacao() {
             </form>
 
             <div>
-                <p>O fatorial de {elementos} é {fatorial(elementos)}</p>
                 {
-                    Number(posicoes) > Number(elementos) ? <p>Se você tivesse prestado atenção na aula do Bifi, saberia que n(elementos) não pode ser menor que p(posições). 😎</p> :
+                    Number(posicoes) > Number(elementos) ? <p style={{ color: "red", fontWeight: "bold" }}>N(elementos) não pode ser menor que P(posições).</p> :
                     <p>A combinação de {elementos} elementos para {posicoes} posições, é {combinacao(elementos, posicoes)}</p>
                 }
             </div>
