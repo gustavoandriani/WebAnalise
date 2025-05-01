@@ -59,3 +59,15 @@ button:hover {
 button {
   margin-bottom: 10px;
 }
+
+a {
+  text-decoration: none;
+  color: #252525;
+  font-size: 0.9rem;
+}
+
+a:hover {
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.81rem;
+}
